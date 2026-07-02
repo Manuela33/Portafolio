@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manuela Martínez Martínez Loaiza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Hero fade-in */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+    .fade-in:nth-child(2) { transition-delay: 0.1s; }
+    .fade-in:nth-child(3) { transition-delay: 0.2s; }
+    .fade-in:nth-child(4) { transition-delay: 0.3s; }
+
+    /* Blinking cursor */
+    .cursor { display: inline-block; width: 3px; height: 1em; background: var(--purple); margin-left: 4px; animation: blink 1s steps(1) infinite; vertical-align: middle; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+    /* Floating pixels background */
+    .bg-glow { position: fixed; top: 30%; left: 60%; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+
+    /* Scroll indicator */
+    .scroll-hint { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--text-muted); font-size: 0.75rem; animation: float 2s ease-in-out infinite; }
+    .scroll-hint svg { width: 16px; height: 16px; }
+    @keyframes float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
+
+    .hero { position: relative; }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Manuela Martínez</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="about.html">Sobre Mí</a></li>
+      <li><a href="projects.html">Proyectos</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="hero-eyebrow fade-in">¡Hola! — Soy Manuela Martínez</p>
+          <h1 class="fade-in">
+            Desarrolladora<br />
+            <span>Full-Stack</span><span class="cursor"></span>
+          </h1>
+          <p class="fade-in">
+            Ingeniera de Software  con enfoque en el desarrollo de soluciones escalables y eficientes. Especialista en
+            optimizar el rendimiento del lado del servidor y automatizar procesos para transformar datos en herramientas de alto
+            impacto.
+          </p>
+          <div class="fade-in">
+            <a href="projects.html" class="btn btn-primary">Ver proyectos</a>
+            <a href="contact.html" class="btn btn-outline">Contactame</a>
+          </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          scroll
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Built with love by <span>Manuela Martínez</span> &mdash; 2026</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Trigger fade-in on load
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.fade-in').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), i * 120);
+      });
+    });
+  </script>
+</body>
+</html>

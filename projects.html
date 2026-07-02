@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Manuela Martínez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    .page-header { padding: 56px 0 40px; }
+    .page-header h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 10px; }
+    .page-header p { color: var(--text-muted); max-width: 480px; }
+
+    .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+    .filter-btn {
+      padding: 6px 18px; border-radius: 999px; font-size: 0.82rem; font-weight: 500;
+      cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--purple); border-color: var(--purple); color: #fff;
+    }
+
+    /* Project card image placeholder */
+    .project-thumb {
+      width: 100%; height: 130px; border-radius: 8px; margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(139,92,246,0.15), rgba(109,40,217,0.08));
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Manuela Martínez</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">Sobre Mí</a></li>
+      <li><a href="projects.html" class="active">Proyectos</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <header class="page-header">
+        <h1 class="fade-in">Proyectos</h1>
+        <p class="fade-in">Una selección de cosas que he construido.</p>
+      </header>
+
+      <div class="filter-bar fade-in">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="fullstack">Full-stack</button>
+        <button class="filter-btn" data-filter="wordpress">WordPress</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card fade-in" data-cat="fullstack">
+          <div class="project-thumb">🏢</div>
+          <div class="tags" style="margin-bottom:8px;">
+            <span class="tag">Node.js</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">REST APIs</span>
+          </div>
+          <h3>Aplicaciones Web — Asistir Agencia de Seguros</h3>
+          <p>Desarrollo y mantenimiento de aplicaciones web escalables para una agencia de seguros. Construí e implementé APIs RESTful para mejorar la integración entre servicios, optimicé la lógica del lado del servidor y entregué interfaces responsivas enfocadas en la experiencia del usuario.</p>
+        </article>
+
+        <article class="project-card fade-in" data-cat="wordpress">
+          <div class="project-thumb">🚗</div>
+          <div class="tags" style="margin-bottom:8px;">
+            <span class="tag">WordPress</span>
+            <span class="tag">Divi</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">SEO</span>
+          </div>
+          <h3>CDA La Mayorista & Serviteca La Mayorista</h3>
+          <p>Optimización y rediseño de dos sitios WordPress con Divi para el mismo grupo empresarial del sector automotriz (Itagüí). Trabajé en adaptabilidad móvil, corrección de errores técnicos, reestructuración de secciones clave (Servicios, Nosotros, Quiénes somos), optimización de contenido con enfoque comercial sin perder posicionamiento SEO, implementación de mapa interactivo en el footer, módulo de consulta RUNT y sustitución de imágenes con marcas de agua de IA.</p>
+          <div class="project-links">
+            <a href="https://cdalamayorista.com/" target="_blank" aria-label="CDA La Mayorista">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+              CDA
+            </a>
+            <a href="https://servitecalamayorista.com/" target="_blank" aria-label="Serviteca La Mayorista">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+              Serviteca
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card fade-in" data-cat="fullstack">
+          <div class="project-thumb">🎨</div>
+          <div class="tags" style="margin-bottom:8px;">
+            <span class="tag">PHP</span>
+            <span class="tag">MariaDB</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Claude Code</span>
+          </div>
+          <h3>Desarrollo y optimización de plataforma web de Dispresco S.A.S</h3>
+          <p>Desarrollo y optimización de una plataforma de gestión para distribución de licores, donde implementé funcionalidades
+          dinámicas en JavaScript y una arquitectura robusta en PHP con MariaDB. El proyecto se enfocó en la seguridad de las
+          operaciones CRUD y el manejo de sesiones, logrando reducir los tiempos de entrega mediante el uso de Claude Code y
+          técnicas de prompt engineering.</p>
+          <div class="project-links">
+            <a href="https://dispresco.com/" target="_blank" aria-label="Live demo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+              Live
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card fade-in" data-cat="wordpress">
+          <div class="project-thumb">📊</div>
+          <div class="tags" style="margin-bottom:8px;">
+            <span class="tag">WordPress</span>
+            <span class="tag">Elementor</span>
+            <span class="tag">Figma</span>
+          </div>
+          <h3>Rediseño Web BPS Colombia</h3>
+          <p>Rediseño integral del sitio corporativo de BPS Colombia, comenzando desde la fase de prototipado y diseño de mockups en
+          Figma hasta la implementación final. Utilicé WordPress con Elementor para construir una interfaz profesional alineada
+          con la identidad de marca, optimizando la navegación y la accesibilidad para los usuarios.</p>
+          <div class="project-links">
+            <a href="https://www.figma.com/design/MAznyiCJF9WiH6MkV2oYwJ/BPS?node-id=0-1&t=JFkG3pp6zNOLfMNw-1" target="_blank" aria-label="Figma demo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
+              </svg>
+              Figma
+           </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Built with love by <span>Manuela Martínez</span> &mdash; 2026</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Scroll observer
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+    // Filter buttons
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.cat === filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
